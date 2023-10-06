@@ -1,6 +1,5 @@
 import streamlit as st
 from translate import Translator
-#translator=Translator()
 # Streamlit app
 def main():
     st.title("Language Translator")
