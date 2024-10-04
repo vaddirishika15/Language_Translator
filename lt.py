@@ -1,5 +1,5 @@
 import streamlit as st
-from translate import Translator
+from googletrans import Translator
 
 # Streamlit app
 def main():
@@ -13,8 +13,8 @@ def main():
 
 def translate(input_text, source_lang, target_lang):
     try:
-        translator = Translator(to_lang=target_lang, from_lang=source_lang)
-        translation = translator.translate(input_text)
+        translator = Translator()
+        translation = translator.translate(input_text, src=source_lang, dest=target_lang).text
         return translation
     except Exception as e:
         return f"Translation Error: {str(e)}"
